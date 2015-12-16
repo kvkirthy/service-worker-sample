@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service Worker Sample</title>
+	<script type="text/javascript">
+		var globalT;
+	</script>
+	<script type="text/javascript" src="service-worker-registration.js"></script>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body ng-app="serviceWorkerSample">
+	<div ng-controller="firstController">
+		<strong> {{welcomeMessage}} </strong>
+		<br/>
+		<strong>{{apiRef.key1}}</strong>
+	</div>	
+</body>
+</html>
