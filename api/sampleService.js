@@ -24,13 +24,13 @@ app.configure(function(){
 });
 
 app.get('/sample', function(req, res){
-    var sampleObj = require('./sampleObject.json');
+    var sampleObj = require('./dinosaur.json');
     res.end(JSON.stringify(sampleObj));
 });
 
 //module.exports = app;
 
-var server = app.listen(3000, function () {
+var server = app.listen(4000, function () {
   var host = server.address().address;
   var port = server.address().port;
 

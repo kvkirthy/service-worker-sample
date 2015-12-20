@@ -27,7 +27,8 @@ module.exports = function(grunt) {
       logger: grunt.log.writeln,
       staticFileGlobs: ['index.html', 
       'index.js',
-      'node_modules/angular/angular.min.js'],
+      'node_modules/angular/angular.min.js',
+      'node_modules/bootstrap/dist/css/bootstrap.min.css'],
       // verbose defaults to false, but for the purposes of this demo, log more.
       verbose: true
     };

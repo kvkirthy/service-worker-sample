@@ -23,10 +23,9 @@
 /* eslint-env worker, serviceworker */
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren */
 'use strict';
-
 importScripts('node_modules/sw-toolbox/sw-toolbox.js');
 
-toolbox.router.get('/(.*)', toolbox.cacheFirst, {
+toolbox.router.get('/(.*)', toolbox.networkFirst, {
   // Use a dedicated cache for the responses, separate from the default cache.
   cache: {
     name: 'sample-app',
@@ -35,13 +34,13 @@ toolbox.router.get('/(.*)', toolbox.cacheFirst, {
     // Expire any entries that are older than 30 seconds.
     maxAgeSeconds: 30
   },
-  origin: 'localhost:3000'
+  origin: 'localhost:4000'
 
 });
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["index.html","799f47b29cd5feee6247c2d98d5c5a3c"],["index.js","a749dd0c080c47f14de1998b21db7dd2"],["node_modules/angular/angular.min.js","90fb950dbc3e9296755d9cc23a211744"]];
+var PrecacheConfig = [["index.html","fc2d72b90e263878923fa4fb8db557ee"],["index.js","b42937443ff1129ff8504649e2c739b9"],["node_modules/angular/angular.min.js","90fb950dbc3e9296755d9cc23a211744"],["node_modules/bootstrap/dist/css/bootstrap.min.css","2f624089c65f12185e79925bc5a7fc42"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1-service-worker-sample-' + (self.registration ? self.registration.scope : '') + '-';
 

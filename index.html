@@ -2,18 +2,36 @@
 <html>
 <head>
 	<title>Service Worker Sample</title>
-	<script type="text/javascript">
-		var globalT;
-	</script>
+
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
 	<script type="text/javascript" src="service-worker-registration.js"></script>
 	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
 	<script type="text/javascript" src="index.js"></script>
 </head>
 <body ng-app="serviceWorkerSample">
-	<div ng-controller="firstController">
-		<strong> {{welcomeMessage}} </strong>
-		<br/>
-		<strong>{{apiRef.key1}}</strong>
+
+  <!-- Bootstrap Nav bar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <span class="navbar-brand" href="#">Dinosaur Details</span>
+      </div>
+    </div>
+
+  </nav>
+
+	<div class="container" ng-controller="firstController">
+		<table class="table table-striped">
+			<tr ng-repeat="dinosaur in dinosaurs">
+				<td><strong>{{dinosaur.name}}</strong></td>
+				<td>Appeared {{dinosaur.appeared}} years ago</td>
+				<td>{{dinosaur.height}} meters long</td>
+				<td>{{dinosaur.length}} meters wide</td>
+				<td>{{dinosaur.weight}} pounds</td>
+			</tr>
+		</table>
 	</div>	
 </body>
 </html>
