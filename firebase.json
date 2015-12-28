@@ -1,0 +1,7 @@
+{
+  "firebase": "vckstatusboard",
+  "public": ".",
+  "ignore": [
+    "firebase.json"
+  ]
+}

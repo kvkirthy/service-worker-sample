@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>Service Worker Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="service-worker-registration.js"></script>
 	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
@@ -12,10 +16,10 @@
 <body ng-app="serviceWorkerSample">
 
   <!-- Bootstrap Nav bar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default container">
+    <div class="container-fluid row">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
+      <div class="navbar-header col-xs-12 col-sm-12 col-md-12">
         <span class="navbar-brand" href="#">Dinosaur Details</span>
       </div>
     </div>
@@ -23,15 +27,24 @@
   </nav>
 
 	<div class="container" ng-controller="firstController">
-		<table class="table table-striped">
-			<tr ng-repeat="(dinosaur,prop) in dinosaurs">
-				<td><strong>{{dinosaur}}</strong></td>
-				<td>Appeared {{prop.appeared}} years ago</td>
-				<td>{{prop.height}} meters long</td>
-				<td>{{prop.length}} meters wide</td>
-				<td>{{prop.weight}} pounds</td>
-			</tr>
-		</table>
+
+		<div class="row">
+			<div ng-show="showAlert" class="alert alert-danger alert-dismissible col-xs-12 col-sm-12 col-md-12" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  {{errorMessage}}
+			  </div>	
+		</div>
+
+		<div class="table table-striped">
+			<div ng-repeat="(dinosaur,prop) in dinosaurs" class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6"><strong>{{dinosaur}}</strong></div>
+				<div class="col-xs-12 col-sm-6 col-md-6">Appeared {{prop.appeared}} years ago</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">{{prop.height}} meters long</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">{{prop.length}} meters wide</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">{{prop.weight}} pounds</div>
+				<div class="col-xs-12 col-sm-6 col-md-6"><hr/></div>
+			</div>
+		</div>
 	</div>	
 </body>
 </html>
