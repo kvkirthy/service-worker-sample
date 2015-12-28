@@ -34,7 +34,7 @@ toolbox.router.get('/(.*)', toolbox.networkFirst, {
     // Expire any entries that are older than 30 seconds.
     maxAgeSeconds: 30
   },
-  origin: 'localhost:4000'
+  origin: 'dinosaur-facts.firebaseio.com'
 
 });
 

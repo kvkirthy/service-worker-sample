@@ -2,14 +2,12 @@
 
 angular.module('serviceWorkerSample', [])
 .controller('firstController', function($scope, $http){
-	$scope.welcomeMessage = "Hello World";
-
-	$http.get('http://localhost:4000/sample')
-	.success(function(result){
-		$scope.dinosaurs = result;
+	$http.get("https://dinosaur-facts.firebaseio.com/dinosaurs.json")
+	.success(function(results){
+		$scope.dinosaurs = results;
 	})
 	.error(function(error){
-		alert("error, couldn't load dinosaur data");
+		alert("error retreiving data...");
 		console.log(error);
 	});
 });

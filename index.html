@@ -24,12 +24,12 @@
 
 	<div class="container" ng-controller="firstController">
 		<table class="table table-striped">
-			<tr ng-repeat="dinosaur in dinosaurs">
-				<td><strong>{{dinosaur.name}}</strong></td>
-				<td>Appeared {{dinosaur.appeared}} years ago</td>
-				<td>{{dinosaur.height}} meters long</td>
-				<td>{{dinosaur.length}} meters wide</td>
-				<td>{{dinosaur.weight}} pounds</td>
+			<tr ng-repeat="(dinosaur,prop) in dinosaurs">
+				<td><strong>{{dinosaur}}</strong></td>
+				<td>Appeared {{prop.appeared}} years ago</td>
+				<td>{{prop.height}} meters long</td>
+				<td>{{prop.length}} meters wide</td>
+				<td>{{prop.weight}} pounds</td>
 			</tr>
 		</table>
 	</div>	
